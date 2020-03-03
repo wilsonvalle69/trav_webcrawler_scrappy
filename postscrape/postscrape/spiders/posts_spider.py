@@ -10,7 +10,7 @@ class PostSpider(scrapy.Spider):
         'https://blog.scrapinghub.com/'
     ]
 
-    def pasre(self, response):
+    def parse(self, response):
         # page = response.url.split('/')[-1]
         # filename = 'posts-1.html' 
         # with open(filename, 'wb') as f:
@@ -18,9 +18,9 @@ class PostSpider(scrapy.Spider):
         for post in response.css('div.post-item'):
             yield {
                 
-                'title': post.css('.post-header h2 a::text')[0].get()
-                # 'date': post.css('.post-header a::text')[1].get(),
-                # 'author': post.css('.post-header a::text')[2].get()
+                'title': post.css('.post-header h2 a::text')[0].get(),
+                'date': post.css('.post-header a::text')[1].get(),
+                'author': post.css('.post-header a::text')[2].get()
             }
             next_page = response.css('a.next-posts-link::attr(href)').get()
             if next_page is not None:

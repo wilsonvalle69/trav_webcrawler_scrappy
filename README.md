@@ -47,5 +47,23 @@ quit()      # exit shell        <br><br>
 Command to execute applycation and send it to a file    <br>
 scrapy crawl posts -o posts.json     <br>
 
+<br>
+First Project <br>
+folder:postscrape  <br>
+file:posts_spider.py  <br>
+name:posts  <br> 
+description: yields the posts and can be redirected to a file like posts.json   <br>
+cd postscrape   <br>
+scrapy crawl posts -o posts.json    # Creates a json file with all the post title, author, date     <br>
+
+<br>
+Second Project  <br>
+folder:tutorial    <br>
+file:quotes_spider.py   <br>
+name:quotes <br>
+description:get the quotes from two pages and creates the two separate files quotes-1.html and quotes-2.html    <br>
+cd tutorial <br>
+scrapy crawl quotes
+
 
 
